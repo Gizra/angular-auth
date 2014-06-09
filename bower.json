@@ -1,0 +1,31 @@
+{
+  "name": "angular-auth",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Gizra/angular-auth",
+  "authors": [
+    "Gizra"
+  ],
+  "description": "Authentication component for AngularJs",
+  "main": "angular-auth.js",
+  "keywords": [
+    "authetication",
+    "auth",
+    "security",
+    "user",
+    "login"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "latest"
+  }
+}
