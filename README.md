@@ -10,12 +10,12 @@ bower install git@github.com:Gizra/angular-auth.git
 
 Include the required libraries:
 ```html
-<script src='/bower_components/textAngular/dist/angular-auth.min.js'></script>
+<script src='bower_components/angular-auth/dist/angular-auth.min.js'></script>
 ```
 
 Inject the angular-auth module into your app:
 ```javascript
-angular.module('myApp', ['gz.angularAuth']);
+angular.module('myApp', ['gz.angular-auth']);
 ```
 
 Example:
