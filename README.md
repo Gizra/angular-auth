@@ -24,6 +24,11 @@ After add the module, we can use the service User
 ```javascript
 angular.module('myApp')
   .controller('LoginCtrl', function(User) {
-    User.login(data);
+    var user = {
+      username: 'admin',
+      password: 'admin'
+    }
+
+    User.login(user);
   })
 ```
