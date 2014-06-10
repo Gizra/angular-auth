@@ -6,7 +6,7 @@
     "Gizra"
   ],
   "description": "Authentication component for AngularJs",
-  "main": "angular-auth.js",
+  "main": "src/angular-auth.js",
   "keywords": [
     "authetication",
     "auth",
