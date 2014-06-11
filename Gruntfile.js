@@ -70,8 +70,8 @@ module.exports = function(grunt) {
         }
       },
       test: {
-        files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test', 'qunit']
+        files: 'test/**/*.js',
+        tasks: ['karma:unit']
       }
     },
     connect: {
@@ -124,11 +124,11 @@ module.exports = function(grunt) {
     },
     karma: {
       options: {
-        configFile: 'karma.conf.js',
-        browsers: ['PhantomJS']
+        configFile: 'karma.conf.js'
       },
       unit: {
-        singleRun: true
+        singleRun: true,
+        browsers: ['Firefox']
       },
       server: {
         autoWatch: true
@@ -182,7 +182,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('test', [
-    'jshint',
+    //'jshint',
     'karma:unit'
   ]);
 

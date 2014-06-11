@@ -14,11 +14,8 @@ module.exports = function(config) {
     files: [
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-apimock/dist/angular-apimock.min.js',
-      'bower_components/angular-masonry/angular-masonry.js',
-      'bower_components/angular-local-storage/angular-local-storage.js',
       'src/*.js',
-      'test/spec/*.js'
+      'test/**/*.js'
     ],
 
     // list of files to exclude
