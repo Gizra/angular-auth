@@ -23,7 +23,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "latest"
+    "angular": "latest",
+    "angularLocalStorage": "~0.1.7"
   },
   "devDependencies": {
     "angular-mocks": "latest"
