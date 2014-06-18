@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gz.angular-auth', ['angularLocalStorage'])
-  .service('User', function($http, Base64, $q, storage, BACKEND_URL) {
+  .service('User', function($http, Base64, $q, storage, BACKEND_URL, $rootScope) {
 
     var self = this;
 
@@ -30,6 +30,7 @@ angular.module('gz.angular-auth', ['angularLocalStorage'])
         withCredentials: true
       }).success(function(data) {
           storage.set('profile', data);
+          $rootScope.$broadcast('user_login');
 
           deferred.resolve(data);
         }).error(function(data) {
@@ -67,6 +68,7 @@ angular.module('gz.angular-auth', ['angularLocalStorage'])
 
     this.clearProfile = function() {
       storage.remove('profile');
+      $rootScope.$broadcast('user_logout');
     };
 
   })
