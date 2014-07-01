@@ -1,7 +1,16 @@
 'use strict';
 
 angular.module('gz.angular-auth', ['angularLocalStorage'])
-  .service('User', function($http, Base64, $q, storage, BACKEND_URL, $rootScope) {
+  .provider('Auth', function AuthProvider() {
+    var self = this;
+
+    this.backendUrl = '';
+
+    this.$get = function() {
+      return self;
+    }
+  })
+  .service('User', function($http, Base64, $q, storage, $rootScope, Auth) {
 
     var self = this;
 
@@ -45,7 +54,7 @@ angular.module('gz.angular-auth', ['angularLocalStorage'])
      */
     this.logout = function() {
       return $http({
-        url: BACKEND_URL + '/user/logout',
+        url: Auth.backendUrl + '/user/logout',
         withCredentials: true
       }).success(function(data) {
           self.clearProfile();
