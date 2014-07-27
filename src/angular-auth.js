@@ -63,10 +63,31 @@ angular.module('gz.angular-auth', ['angularLocalStorage'])
         });
     };
 
-    this.forgotPassword = function() {
+    /**
+     * User forgot password.
+     *
+     * @param url
+     *  The end-point URL.
+     * @param userData
+     *  The user data to send to the end-point.
+     *
+     * @return promise
+     */
+    this.forgotPassword = function(url, userData) {
       var deferred = $q.defer();
 
-      deferred.resolve({status:ok});
+      $http({
+        url: url,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: jQuery.param(userData)
+      }).success(function(data) {
+        deferred.resolve(data);
+      }).error(function(data) {
+        deferred.reject(data);
+      });
 
       return deferred.promise;
     };
